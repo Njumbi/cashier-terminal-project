@@ -5,6 +5,8 @@ package models
  * @property {Double?} amount - The amount of the product.
  */
 data class ProductsModel(
+    val id: Int,
     val name: String?,
     val amount: Double?,
+    var quantity: Int
 )
