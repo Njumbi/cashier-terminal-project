@@ -13,7 +13,7 @@ fun main() {
     //Declaring a variable session and assigning it to null
     var session: Session? = null
     // Declaring variable cart which is a mutable list of strings
-    var cart = CartRepository()
+    val cart = CartRepository()
 
     // An infinite loop that doesn't exit the app.
     while (true) {
@@ -41,7 +41,7 @@ fun main() {
                 println("Here is your list:")
                 val cartItems = cart.getAllCartItems()
                 cartItems.forEach { item ->
-                    println("${cartItems.indexOf(item)} - ${item.name} ........ KES ${item.amount}")
+                    println("${item.quantity} - ${item.name} ........ KES ${item.amount!! * item.quantity}")
                 }
                 println("--------------")
                 println("Total: KES ${cart.totalAmount()}")
@@ -57,7 +57,11 @@ fun main() {
             if (input?.isNotEmpty() == true && !ActionsUtils.getListOfActions().contains(input)) {
                 val searchResults = cart.getProductDetailsByName(input)
                 searchResults?.let {
-                    cart.addProductToCart(it)
+                    try {
+                        cart.addProductToCart(it)
+                    } catch (e: Exception) {
+                        println(e.message)
+                    }
                 } ?: run {
                     println("Item not found!")
                 }
