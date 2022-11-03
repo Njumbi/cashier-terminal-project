@@ -14,7 +14,9 @@ This is an application that allows users to shop for items and also prints their
 
 ## General Preview
 
-## Run the Project
+## Run project
+
+## Installation
 
 ## Contributors
 Auto-populated from:[contrib.rocks](https://contrib.rocks)
