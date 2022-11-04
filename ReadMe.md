@@ -18,6 +18,8 @@ This is a small app that has the following key features:
 
 ## General Preview
 
+![](src/main/kotlin/screenshots/terminal.png)
+
 ## Run project
 ```bash
 https://github.com/Njumbi/cashier-terminal-project.git
